@@ -55,16 +55,36 @@ def print_report():
     print(f"Coffee: {resources['coffee']}g")
     print(f"Profit: ${profit}")
 
+def all_successful(payment,drink_cost):
+    """Validate if everything is ok to continue"""
+    if payment >= drink_cost:
+        change = payment - drink_cost
+        print(f"Here is your change: {change}. Thanks for being a coffee yunki")
+        global profit
+        profit += drink_cost
+        return True
+    else:
+        print(f"Payment is not enough. Money refunded.")
+        return False
+
+def make_coffee(choice, drink_ingredients):
+    for ingredient in drink_ingredients:
+        resources[ingredient] = resources[ingredient] - drink_ingredients[ingredient]
+    print(f"Here do you have your: {choice}")
+    return True
+
 is_on = True
 
 while is_on:
     choice = input("What would you like? [espresso/latte/cappuccino]: ")
-    """ Choise to power-off the machine. Not shown in the previous prompt because it is for admins """
+    """ To power-off the machine. Not shown in the previous prompt because it is for admins """
     if choice == "off":
         is_on = False
     elif choice == "report":
         print_report()
     else:
-        order = MENU[choice]
-        if is_enough_resources(order):
-
+        drink = MENU[choice]
+        if is_enough_resources(drink["ingredients"]):
+            payment = ask_for_coins()
+            if all_successful(payment, drink["cost"]):
+                make_coffee(choice, drink["ingredients"])
