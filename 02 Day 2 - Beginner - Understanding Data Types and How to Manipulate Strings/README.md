@@ -1,4 +1,5 @@
 # Mathematical Operators in Python
+The operators are in inverse order of prioritacion acoording with the [PEMDAS](https://www.mathsisfun.com/operation-order-pemdas.html) order.
 ### Addition
 a = 2 + 3
 print(a)  # Output: 5
