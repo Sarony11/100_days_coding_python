@@ -1,7 +1,7 @@
 """ This exercise shows:
-- mathematical operation order
-- how to convert string into float to make mathematical operations with inputs 
-- round function 
+- using f-Strings sintax to print string and variables at the same time.
+- mathematical operators 
+- string to int transformation
 """
 age = int(input("What is your current age? (years): "))
 
