@@ -1,3 +1,4 @@
+"""Provided by the exercise"""
 MENU = {
     "espresso": {
         "ingredients": {
