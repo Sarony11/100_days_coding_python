@@ -12,3 +12,4 @@ quizz = QuizzBrain(question_bank)
 
 while quizz.still_questions():
     quizz.next_question()
+quizz.final_score()
