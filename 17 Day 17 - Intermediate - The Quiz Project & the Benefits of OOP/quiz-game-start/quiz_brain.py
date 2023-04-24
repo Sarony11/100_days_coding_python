@@ -16,7 +16,7 @@ class QuizzBrain():
             print("Well done! Right answer")
         else:
             print("Wrong answer")
-        print(f"->YOUR ACTUAL SCORE IS: {self.score}")
+        print(f"->YOUR ACTUAL SCORE IS: {self.score}/{self.q_number}")
 
 
     def still_questions(self):
