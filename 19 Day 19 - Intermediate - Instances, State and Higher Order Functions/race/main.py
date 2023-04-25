@@ -1,7 +1,7 @@
 from turtle import Turtle, Screen
 import random
 
-color_list = ["red", "yellow", "green", "black", "blue",]
+color_list = ["red", "yellow", "green", "black", "blue", "orange"]
 picked_colors = []
 MOVEMENT = 5
 TURTLES = 5
@@ -19,7 +19,7 @@ def random_unique_color(colors):
     return color
 
 def create_turtles(number_turtles, colors):
-    number_turtles = int(s.textinput("How many turtles?", "How many turtles do you want(max 5)? : "))
+    number_turtles = int(s.textinput("How many turtles?", f"How many turtles do you want(max {len(colors)})? : "))
     turtles = []
     pos_x = (-SCREEN_WIDTH/2)+20
     pos_y = (-SCREEN_HEIGHT/number_turtles)
