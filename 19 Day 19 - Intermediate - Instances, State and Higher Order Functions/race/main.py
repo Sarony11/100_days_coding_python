@@ -31,7 +31,6 @@ def create_turtles(number_turtles, colors):
         t.penup()
         t.shape("turtle")
         t.color(random_unique_color(colors))
-        print(t.color())
         t.setpos(pos_x,pos_y)
         pos_y += SCREEN_HEIGHT/number_turtles/2
         turtles.append(t)
