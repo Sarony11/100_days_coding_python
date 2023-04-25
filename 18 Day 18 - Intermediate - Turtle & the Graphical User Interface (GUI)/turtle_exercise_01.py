@@ -1,3 +1,5 @@
+"""Draw shapes with dashed line"""
+
 from turtle import Turtle, Screen
 
 o = Turtle()

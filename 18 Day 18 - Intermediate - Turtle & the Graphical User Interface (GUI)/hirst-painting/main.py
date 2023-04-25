@@ -40,16 +40,17 @@ o = Turtle()
 Screen().colormode(255)
 o.speed(0)
 o.seth(0)
-o.width(5)
 
 # Get the screen dimensions
 screen_width = Screen().window_width()
 screen_height = Screen().window_height()
+print(screen_width,screen_height)
 
 # Calculate the spacing between dots
 dot_size = 10
 dot_spacing_x = (screen_width - dot_size * 20) / 21  # 20 dots with 21 spacings
 dot_spacing_y = (screen_height - dot_size * 20) / 21
+print(dot_spacing_x, dot_spacing_y)
 
 # Calculate the position of the top-left dot
 x = -screen_width/2 + dot_size/2 + dot_spacing_x/2
