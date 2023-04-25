@@ -4,7 +4,7 @@ import random
 import colorgram
 
 # Extract 6 colors from an image.
-COLOR_VARIETY = 24
+COLOR_VARIETY = 30
 colors = colorgram.extract('hirst-painting.webp', COLOR_VARIETY)
 
 def create_RGB_color_palette(color_palette):
