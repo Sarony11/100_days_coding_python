@@ -1,23 +1,35 @@
 from turtle import Turtle, Screen
 
+MOVEMENT = 5
+
 t = Turtle()
 s = Screen()
 s.listen()
 
 def forward():
-    t.forward(5)
+    t.forward(MOVEMENT)
+    return
+
+def backward():
+    t.backward(MOVEMENT)
     return
 
 def turn_right():
-    t.right(5)
+    t.right(MOVEMENT)
     return
 
 def turn_left():
-    t.left(5)
+    t.left(MOVEMENT)
     return
 
-s.onkey(key="space", fun=forward)
-s.onkey(key="Right", fun=turn_right)
-s.onkey(key="Left", fun=turn_left)
+def clear():
+    t.setpos(0,0)
+    t.clear()
+
+s.onkey(key="w", fun=forward)
+s.onkey(key="s", fun=backward)
+s.onkey(key="d", fun=turn_right)
+s.onkey(key="a", fun=turn_left)
+s.onkey(key="space", fun=clear)
 
 s.exitonclick()
