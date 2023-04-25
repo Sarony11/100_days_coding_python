@@ -19,9 +19,10 @@ def random_unique_color(colors):
     return color
 
 def create_turtles(number_turtles, colors):
+    number_turtles = int(s.textinput("How many turtles?", "How many turtles do you want(max 5)? : "))
     turtles = []
     pos_x = (-SCREEN_WIDTH/2)+20
-    pos_y = (-SCREEN_HEIGHT/TURTLES)
+    pos_y = (-SCREEN_HEIGHT/number_turtles)
     if number_turtles > len(color_list):
         print("There are not enough colors for the turtles. Please setup less turtles for the race")
         return False
@@ -32,7 +33,7 @@ def create_turtles(number_turtles, colors):
         t.color(random_unique_color(colors))
         print(t.color())
         t.setpos(pos_x,pos_y)
-        pos_y += SCREEN_HEIGHT/TURTLES/2
+        pos_y += SCREEN_HEIGHT/number_turtles/2
         turtles.append(t)
     return turtles
 
