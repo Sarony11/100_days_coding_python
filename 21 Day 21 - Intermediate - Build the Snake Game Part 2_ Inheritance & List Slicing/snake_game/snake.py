@@ -42,17 +42,21 @@ class Snake:
             return False
 
     def move_up(self):
-        self.snake[0].seth(90)
+        if self.snake[0].heading() != 360-90:
+            self.snake[0].seth(90)
         return
 
     def move_down(self):
-        self.snake[0].seth(270)
+        if self.snake[0].heading() != 360-270:
+            self.snake[0].seth(270)
         return
 
     def move_right(self):
-        self.snake[0].seth(0)
+        if self.snake[0].heading() != 360-0:
+            self.snake[0].seth(0)
         return
 
     def move_left(self):
-        self.snake[0].seth(180)
+        if self.snake[0].heading() != 360-180:
+            self.snake[0].seth(180)
         return
