@@ -28,7 +28,7 @@ while game_on:
     snake.forward()
     # Detect collision with food
     if snake.check_eat(food):
-        print("ÑAM!")
+        food.refresh()
 
 
 s.exitonclick()
