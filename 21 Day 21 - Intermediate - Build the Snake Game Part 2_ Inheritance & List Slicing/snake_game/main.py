@@ -1,6 +1,7 @@
-from turtle import Turtle, Screen
+from turtle import Screen
 import time
 from snake import Snake
+from food import Food
 
 SCREEN_WIDTH = 600
 SCREEN_HEIGHT = 600
@@ -13,6 +14,7 @@ s.title("Snake Game")
 s.tracer(0,0)
 
 snake = Snake()
+food = Food()
 s.listen()
 s.onkey(fun=snake.move_up, key="w")
 s.onkey(fun=snake.move_down, key="s")
