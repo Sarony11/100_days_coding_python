@@ -21,7 +21,8 @@ class Snake:
         for i in range(len(self.snake) -1, -1, -1):
             self.snake[i].forward(20)
             if self.snake[i].heading() != self.snake[i-1].heading():
-                self.snake[i].seth(self.snake[i-1].heading())
+                if i != 0:
+                    self.snake[i].seth(self.snake[i-1].heading())
         return
 
     def move_up(self):
