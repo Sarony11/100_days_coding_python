@@ -30,6 +30,9 @@ while game_on:
     if snake.check_eat(food):
         food.refresh()
         snake.grow()
+    if snake.hit_wall(): 
+        game_on = False
+        print("End the Game")
 
 
 s.exitonclick()

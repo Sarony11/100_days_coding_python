@@ -60,3 +60,9 @@ class Snake:
         if self.snake[0].heading() != 360-180:
             self.snake[0].seth(180)
         return
+    
+    def hit_wall(self):
+        if self.snake[0].xcor() == -300 or self.snake[0].ycor() == -300 or self.snake[0].xcor() == 300 or self.snake[0].ycor() == 300:
+            return True
+        else:
+            return False
