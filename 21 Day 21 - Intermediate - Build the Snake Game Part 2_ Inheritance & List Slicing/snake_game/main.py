@@ -2,6 +2,7 @@ from turtle import Screen
 import time
 from snake import Snake
 from food import Food
+from screenboard import Screenboard
 
 SCREEN_WIDTH = 600
 SCREEN_HEIGHT = 600
@@ -12,6 +13,7 @@ s.setup(SCREEN_WIDTH, SCREEN_HEIGHT)
 s.bgcolor("black")
 s.title("Snake Game")
 s.tracer(0,0)
+screenboard = Screenboard()
 
 snake = Snake()
 food = Food()
@@ -28,12 +30,15 @@ while game_on:
     snake.forward()
     # Detect collision with food
     if snake.check_eat(food):
+        screenboard.score()
         food.refresh()
         snake.grow()
-    if snake.hit_wall(): 
+    if snake.hit_wall():
+        screenboard.end_game() 
         game_on = False
         print("End the Game")
     if snake.hit_tail(): 
+        screenboard.end_game()
         game_on = False
         print("End the Game")
 
