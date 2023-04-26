@@ -24,7 +24,11 @@ s.onkey(fun=snake.move_left, key="a")
 while game_on:
     s.update()
     time.sleep(0.5)
+    # Keep moving the snake all the time
     snake.forward()
+    # Detect collision with food
+    if snake.check_eat(food):
+        print("ÑAM!")
 
 
 s.exitonclick()

@@ -25,6 +25,12 @@ class Snake:
                     self.snake[i].seth(self.snake[i-1].heading())
         return
 
+    def check_eat(self,food):
+        if self.snake[0].distance(food) < 15: 
+            return True
+        else:
+            return False
+
     def move_up(self):
         self.snake[0].seth(90)
         return
