@@ -23,12 +23,13 @@ s.onkey(fun=snake.move_left, key="a")
 
 while game_on:
     s.update()
-    time.sleep(0.5)
+    time.sleep(0.2)
     # Keep moving the snake all the time
     snake.forward()
     # Detect collision with food
     if snake.check_eat(food):
         food.refresh()
+        snake.grow()
 
 
 s.exitonclick()

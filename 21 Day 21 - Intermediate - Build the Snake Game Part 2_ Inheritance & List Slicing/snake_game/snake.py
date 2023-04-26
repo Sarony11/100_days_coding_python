@@ -3,18 +3,28 @@ from turtle import Turtle
 class Snake:
     def __init__(self):
         self.snake = []
-        self.create_snake(self.snake)
+        self.create_snake()
         return
 
-    def create_snake(self,snake):
-        pos = 0
+    def grow(self):
+        part = Turtle("square")
+        part.color("white")
+        part.penup()
+        part.setpos(self.snake[-1].pos())
+        part.backward(20)
+        self.snake.append(part)
+
+
+    def create_snake(self):
         for n in range(3):
-            part = Turtle("square")
-            part.color("white")
-            part.penup()
-            part.backward(pos)
-            snake.append(part)
-            pos += 20
+            if len(self.snake) == 0:
+                part = Turtle("square")
+                part.color("white")
+                part.penup()
+                part.setpos(0,0)
+                self.snake.append(part)
+            else:
+                self.grow()
         return
 
     def forward(self):
