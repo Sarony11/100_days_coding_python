@@ -16,7 +16,7 @@ class Snake:
 
 
     def create_snake(self):
-        for n in range(3):
+        for n in range(15):
             if len(self.snake) == 0:
                 part = Turtle("square")
                 part.color("white")
@@ -66,3 +66,9 @@ class Snake:
             return True
         else:
             return False
+        
+    def hit_tail(self):
+        for part in self.snake[1::]:
+            if part.pos() == self.snake[0].pos():
+                return True
+        return False
