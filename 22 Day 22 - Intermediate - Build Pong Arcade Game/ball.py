@@ -10,16 +10,24 @@ class Ball(Turtle):
         self.penup()
         self.screen_width = width
         self.screen_height = height
-        self.seth(73)
+        self.seth(225)
         return
     
     def move_ball(self):
-        self.forward(20)
+        self.forward(2)
         self.colision_wall()
     
     def colision_wall(self):
-        if self.ycor() >= self.screen_height/2:
-            if self.seth() >= 270 or self.seth() <= 90:
+        print(self.pos())
+        print(self.heading())
+        if self.ycor() >= (self.screen_height/2)-20:
+            if (self.heading() > 270 or self.heading() > 90):
                 self.seth(self.heading()+90)
             else:
                 self.seth(self.heading()-90)
+        if self.ycor() <= (-self.screen_height/2)+20:
+            if (self.heading() > 270 or self.heading() > 90):
+                self.seth(self.heading()-90)
+            else:
+                self.seth(self.heading()+90)
+                
