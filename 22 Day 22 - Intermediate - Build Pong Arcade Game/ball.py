@@ -9,8 +9,6 @@ class Ball(Turtle):
         self.color("white")
         self.penup()
         self.screen_width = width
-        self.top_wall = (height/2)-height/40
-        self.bottom_wall = -(height/2)+height/40
         self.screen_height = height
         self.xmove = 10
         self.ymove = 10
@@ -20,8 +18,10 @@ class Ball(Turtle):
         xcor = self.xcor() + self.xmove
         ycor = self.ycor() + self.ymove
         self.setpos(xcor,ycor)
-        self.colision_wall()
     
-    def colision_wall(self):
-        if self.ycor() >=  self.top_wall or self.ycor() <= self.bottom_wall:
-            self.ymove *= -1
+    def bounce_y(self):
+        self.ymove *= -1
+
+    def bounce_x(self):
+        self.xmove *= -1
+    
