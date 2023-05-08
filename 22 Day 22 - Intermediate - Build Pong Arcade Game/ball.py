@@ -1,5 +1,4 @@
 from turtle import Turtle
-import random
 
 class Ball(Turtle):
 
@@ -10,23 +9,19 @@ class Ball(Turtle):
         self.color("white")
         self.penup()
         self.screen_width = width
+        self.top_wall = (height/2)-height/40
+        self.bottom_wall = -(height/2)+height/40
         self.screen_height = height
+        self.xmove = 10
+        self.ymove = 10
         return
     
     def move_ball(self):
-        xcor = self.xcor()+2
-        ycor = self.ycor()+2
+        xcor = self.xcor() + self.xmove
+        ycor = self.ycor() + self.ymove
         self.setpos(xcor,ycor)
         self.colision_wall()
     
     def colision_wall(self):
-        if self.ycor() >= (self.screen_height/2)-20:
-            if (self.heading() > 270 or self.heading() > 90):
-                self.seth(self.heading()+90)
-            else:
-                self.seth(self.heading()-90)
-        if self.ycor() <= (-self.screen_height/2)+20:
-            if (self.heading() > 270 or self.heading() > 90):
-                self.seth(self.heading()-90)
-            else:
-                self.seth(self.heading()+90)
+        if self.ycor() >=  self.top_wall or self.ycor() <= self.bottom_wall:
+            self.ymove *= -1

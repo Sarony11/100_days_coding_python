@@ -25,8 +25,8 @@ s.onkey(lambda: p2.move_down(),key="k")
 
 
 while game_on:
+    time.sleep(0.1)
     s.update()
-    time.sleep(0.01)
     b.move_ball()
 
 
