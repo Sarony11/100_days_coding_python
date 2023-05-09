@@ -3,7 +3,7 @@
 
 print(data) """
 
-import csv
+""" import csv
 
 temperatures = []
 with open("226 weather-data.csv") as file:
@@ -14,4 +14,9 @@ with open("226 weather-data.csv") as file:
         except:
             None
 
-    print(temperatures)
+    print(temperatures) """
+
+import pandas
+
+data = pandas.read_csv("226 weather-data.csv")
+print(data["temp"].tolist())
