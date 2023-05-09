@@ -23,9 +23,9 @@ screen.setup(width, height)
 
 score = Score()
 
-while len(state_list) < 50:
-    answer_state = screen.textinput(title=f"({score.points}/{state_count}) Guess State", prompt="What's another state's name?:")
-    if state_list.count(answer_state) == 1:
+while len(state_list) > 0:
+    answer_state = screen.textinput(title=f"({score.points}/{state_count}) Guess State", prompt="What's another state's name?:").title()
+    if answer_state in state_list:
         state_list.remove(answer_state)
         state = states_df[states_df.state == answer_state]
         state_coordinates = (int(state.x),int(state.y))
