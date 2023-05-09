@@ -27,3 +27,7 @@ max_temp = data["temp"].max()
 
 print(data[data.temp == max_temp])
 
+monday = data[data.day == "Monday"]
+monday_temp_F = int(monday.temp)*9/5+32
+print(monday_temp_F)
+
