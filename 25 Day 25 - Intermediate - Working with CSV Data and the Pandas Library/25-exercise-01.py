@@ -23,4 +23,7 @@ data = pandas.read_csv("226 weather-data.csv")
 print(sum(data["temp"].tolist())/len(data["temp"].tolist()))
 print(data["temp"].mean())
 
-print(data["temp"].max())
+max_temp = data["temp"].max()
+
+print(data[data.temp == max_temp])
+
