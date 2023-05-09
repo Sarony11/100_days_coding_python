@@ -2,6 +2,7 @@ from turtle import Screen
 import time
 from paddle import Paddle
 from ball import Ball
+from scoreboard import Scoreboard
 
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
@@ -13,6 +14,8 @@ s.bgcolor("black")
 s.title("Ping Pong")
 s.tracer(0,0)
 s.delay(10)
+sb1 = Scoreboard(SCREEN_WIDTH,SCREEN_HEIGHT)
+sb2 = Scoreboard(-SCREEN_WIDTH,SCREEN_HEIGHT)
 p1 = Paddle(SCREEN_WIDTH,SCREEN_HEIGHT)
 p2 = Paddle(-SCREEN_WIDTH,SCREEN_HEIGHT)
 b = Ball(SCREEN_WIDTH,SCREEN_HEIGHT)
@@ -37,7 +40,13 @@ while game_on:
     if (b.distance(p1) < 50 and b.xcor() < -(SCREEN_WIDTH/2)+(SCREEN_WIDTH*0.13)) or b.distance(p2) < 50 and b.xcor() > (SCREEN_WIDTH/2)-(SCREEN_WIDTH*0.13):
         b.bounce_x()
 
-    
+    # Detect miss by paddle
+    if b.xcor() > SCREEN_WIDTH/2:
+        sb1.score()
+        b.reset()
+    if b.xcor() < -SCREEN_WIDTH/2:
+        sb2.score()
+        b.reset()
 
 
 
