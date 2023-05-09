@@ -19,4 +19,6 @@ with open("226 weather-data.csv") as file:
 import pandas
 
 data = pandas.read_csv("226 weather-data.csv")
-print(data["temp"].tolist())
+
+print(sum(data["temp"].tolist())/len(data["temp"].tolist()))
+print(data["temp"].mean())
