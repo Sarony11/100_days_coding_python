@@ -8,5 +8,12 @@ screen.addshape(image)
 t = turtle.Turtle()
 t.shape(image)
 
+# Define a function to get the mouse coordinates
+def get_mouse_click(x, y):
+    print("Mouse clicked at x =", x, ", y =", y)
 
-screen.exitonclick()
+# Call the onscreenclick method and pass the function as argument
+turtle.onscreenclick(get_mouse_click)
+
+turtle.mainloop()
+#screen.exitonclick()
