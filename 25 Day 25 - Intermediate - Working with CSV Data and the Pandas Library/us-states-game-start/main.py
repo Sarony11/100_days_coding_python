@@ -3,7 +3,6 @@ import pandas
 from score import Score
 
 image = "blank_states_img.gif"
-game_on = True
 states_df = pandas.read_csv("50_states.csv")
 state_list = list(states_df.state)
 state_count = len(state_list)
@@ -24,7 +23,7 @@ screen.setup(width, height)
 
 score = Score()
 
-while game_on:
+while len(state_list) < 50:
     answer_state = screen.textinput(title=f"({score.points}/{state_count}) Guess State", prompt="What's another state's name?:")
     if state_list.count(answer_state) == 1:
         state_list.remove(answer_state)
