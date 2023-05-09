@@ -17,5 +17,5 @@ with open("Input/Names/invited_names.txt", mode="r") as file:
 letters = [content.replace("[name]",g) for g in modified_guest]
 
 for letter, guest in zip(letters, modified_guest):
-    with open(f"Output/letter-to-{guest}.txt", mode="w") as file:
+    with open(f"Output/ReadyToSend/letter-to-{guest}.txt", mode="w") as file:
         file.write(letter)
