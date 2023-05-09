@@ -34,6 +34,9 @@ while len(state_list) > 0:
         score.write_state(answer_state, state_coordinates)
         score.score()
 
+# Generate a csv with the states missing
+states = pandas.DataFrame(state_list)
+states.to_csv("states_to_learn.txt")
 """ # Define a function to get the mouse coordinates
 def get_mouse_click(x, y):
     print("Mouse clicked at x =", x, ", y =", y)
