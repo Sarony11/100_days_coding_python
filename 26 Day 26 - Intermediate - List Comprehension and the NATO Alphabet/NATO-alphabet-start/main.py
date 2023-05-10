@@ -29,4 +29,7 @@ NATO_dict = {letter: code for letter,code in zip(NATO_df.letter,NATO_df.code)}
 print(NATO_dict)
 
 #TODO 2. Create a list of the phonetic code words from a word that the user inputs.
+word = input("Give me a word: ").upper()
+word_code = [NATO_dict[l] for l in word]
+print(word_code)
 
