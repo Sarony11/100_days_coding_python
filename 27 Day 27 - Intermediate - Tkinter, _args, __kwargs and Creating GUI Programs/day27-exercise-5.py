@@ -24,12 +24,15 @@ def label_text_on_entry():
     my_label.config(text=my_entry.get())
 
 # I reference this button to the function button_clicked
-button = Button(text="Click Me", command=label_text_on_entry)
-button.grid(column=1, row=1)
+my_button1 = Button(text="Click Me", command=label_text_on_entry)
+my_button1.grid(column=1, row=1)
+
+my_button2 = Button(text="Click Me", command=label_text_on_entry)
+my_button2.grid(column=2, row=0)
 
 # Entry
 my_entry = Entry(width=10)
-my_entry.grid(column=2, row=2)
+my_entry.grid(column=3, row=2)
 
 
 window.mainloop()
