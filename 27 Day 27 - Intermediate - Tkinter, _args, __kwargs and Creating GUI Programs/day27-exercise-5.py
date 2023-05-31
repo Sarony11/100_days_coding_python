@@ -14,6 +14,7 @@ my_label.grid(column=0, row=0)
 
 my_label["text"] = "New Text"
 my_label.config(text="New text")
+my_label.config(padx="50",pady="50")
 
 #Button
 
