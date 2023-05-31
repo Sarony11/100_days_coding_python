@@ -6,6 +6,7 @@ from tkinter import *
 window = Tk()
 window.title("My First GUI Program")
 window.minsize(width=500, height=300)
+window.config(padx="20",pady="20")
 
 # Labels
 my_label = Label(text="I am a label", font=("Arial",24,"bold"))
@@ -26,6 +27,7 @@ def label_text_on_entry():
 # I reference this button to the function button_clicked
 my_button1 = Button(text="Click Me", command=label_text_on_entry)
 my_button1.grid(column=1, row=1)
+
 
 my_button2 = Button(text="Click Me", command=label_text_on_entry)
 my_button2.grid(column=2, row=0)
